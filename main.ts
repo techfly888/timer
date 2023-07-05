@@ -3,6 +3,7 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     basic.showNumber(Zeit)
     basic.pause(2000)
     basic.clearScreen()
+    Zähler = 0
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     for (let index = 0; index < 9; index++) {
@@ -10,6 +11,7 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
         basic.showNumber(Zeit)
         basic.pause(500)
     }
+    basic.pause(2000)
     basic.clearScreen()
 })
 let Zähler = 0
@@ -27,7 +29,7 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
-    if (Zeit == 0 && pins.digitalReadPin(DigitalPin.P1) == 1) {
+    if (Zeit == 0 && pins.digitalReadPin(DigitalPin.C17) == 1) {
         Zähler += 1
         basic.showNumber(Zähler)
         basic.pause(10000)
